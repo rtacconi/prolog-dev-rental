@@ -8,17 +8,37 @@ A complete DVD rental management system built with SWI-Prolog.
 
 ## Requirements
 
-- [SWI-Prolog](https://www.swi-prolog.org/) 8.0+
+- [SWI-Prolog](https://www.swi-prolog.org/) 8.0+  
+  **or** [Devbox](https://www.jetify.com/docs/devbox/installing-devbox) (recommended; no system-wide install)
 
 ## Running
+
+### With Devbox (recommended)
+
+[Devbox](https://www.jetify.com/docs/devbox/installing-devbox) pins SWI-Prolog and its dependencies so you don’t need to install Prolog on your machine.
+
+```bash
+cd prolog-dev-rental
+devbox run start
+```
+
+The server starts on port 8080. Open [http://localhost:8080/](http://localhost:8080/) in your browser.
+
+To get a shell with `swipl` available without starting the server:
+
+```bash
+devbox shell
+swipl server.pl   # or use the REPL
+```
+
+### With a local SWI-Prolog install
 
 ```bash
 cd prolog-dev-rental
 swipl server.pl
 ```
 
-The server starts automatically on port 8080.
-Open [http://localhost:8080/](http://localhost:8080/) in your browser.
+The server starts automatically on port 8080. Open [http://localhost:8080/](http://localhost:8080/) in your browser.
 
 ## Project structure
 
