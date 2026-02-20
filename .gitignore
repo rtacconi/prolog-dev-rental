@@ -1,0 +1,48 @@
+# Ignore build outputs from performing a nix-build or `nix build` command
+result
+result-*
+
+# Ignore automatically generated direnv output
+.direnv
+
+# ---- SWI-Prolog ----
+*.qlf
+*.po
+*.so
+*.o
+__pl_*
+*.pl~
+.swipl
+swipl.log
+*.bak
+
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ---- Linux ----
+*~
+.nfs*
+
+# ---- Windows ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.lnk
+$RECYCLE.BIN/
+
+# ---- IDEs / editors ----
+.idea/
+*.iml
+.vscode/
+.cursor/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+.project
+.classpath
+.settings/

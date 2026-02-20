@@ -1,0 +1,656 @@
+/*
+ * DVD Rental — statehouse.dev visual style (dark theme)
+ * Matches statehouse.dev: navy/slate background, blue primary, hero band
+ */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Force dark background immediately so the page is never white */
+html,
+body {
+    background-color: #0f172a;
+}
+
+:root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-hover: #334155;
+    --border: #334155;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --primary-light: #60a5fa;
+    --font-base: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, sans-serif;
+    --radius: 0.4rem;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: var(--font-base);
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+a {
+    color: var(--primary-light);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---- Navbar (statehouse-style dark) ---- */
+
+.navbar {
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.navbar-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: 3.75rem;
+}
+
+.brand {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: color 0.2s, background 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-light);
+    background: rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+}
+
+/* ---- Layout ---- */
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem 4rem;
+}
+
+/* ---- Typography ---- */
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.75rem;
+}
+
+/* ---- Hero (statehouse primary band) ---- */
+
+.hero {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: inherit;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    opacity: 0.95;
+}
+
+/* ---- Stats grid ---- */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background: var(--surface);
+    border-radius: calc(var(--radius) * 2);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.stat-number {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    line-height: 1.1;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8125rem;
+    margin-top: 0.375rem;
+}
+
+/* ---- Quick links (statehouse button style) ---- */
+
+.quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* ---- Buttons ---- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    line-height: 1.5;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: #fff;
+}
+
+.btn:not(.btn-primary):not(.btn-warning) {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.btn:not(.btn-primary):not(.btn-warning):hover {
+    background: var(--surface-hover);
+    border-color: var(--text-muted);
+    color: var(--text);
+}
+
+.btn-warning {
+    background: #f59e0b;
+    color: #0f172a;
+    border-color: #f59e0b;
+}
+
+.btn-warning:hover {
+    background: #d97706;
+    border-color: #d97706;
+    color: #0f172a;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8125rem;
+}
+
+.back-link {
+    margin-bottom: 1.25rem;
+}
+
+/* ---- Tables ---- */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border-radius: calc(var(--radius) * 2);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.data-table thead {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.data-table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.data-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table a {
+    color: var(--primary-light);
+    font-weight: 500;
+}
+
+.data-table a:hover {
+    text-decoration: underline;
+}
+
+/* ---- Badges & tags ---- */
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(59, 130, 246, 0.25);
+    color: var(--primary-light);
+    vertical-align: middle;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius);
+    font-size: 0.8125rem;
+    background: var(--surface-hover);
+    color: var(--text-muted);
+    margin-right: 0.375rem;
+    margin-bottom: 0.375rem;
+}
+
+/* ---- Status colours ---- */
+
+.available  { color: #34d399; font-weight: 600; }
+.unavailable { color: #f87171; font-weight: 600; }
+.active     { color: #34d399; font-weight: 600; }
+.returned   { color: var(--text-muted); }
+.inactive   { color: #f87171; font-weight: 600; }
+
+/* ---- Film detail ---- */
+
+.film-detail {
+    background: var(--surface);
+    border-radius: calc(var(--radius) * 2);
+    padding: 2rem;
+    border: 1px solid var(--border);
+}
+
+.film-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.film-header h1 {
+    margin-bottom: 0;
+}
+
+.film-meta {
+    margin-bottom: 1.25rem;
+}
+
+.film-desc {
+    color: var(--text-muted);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.film-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius);
+}
+
+.info-item strong {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+/* ---- Cast list ---- */
+
+.cast-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.cast-list li {
+    background: var(--surface-hover);
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* ---- Rent section ---- */
+
+.rent-section {
+    margin-top: 2rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ---- Forms ---- */
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.375rem;
+    font-size: 0.875rem;
+}
+
+.form-group select,
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 0.6rem 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.9375rem;
+    color: var(--text);
+    background: var(--surface-hover);
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-action {
+    flex: 0 0 auto !important;
+}
+
+.rental-form {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: calc(var(--radius) * 2);
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+/* ---- Search ---- */
+
+.search-form {
+    margin-bottom: 1.25rem;
+}
+
+.search-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    color: var(--text);
+    background: var(--surface-hover);
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* ---- Category filter ---- */
+
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.cat-link {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: var(--surface);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.cat-link:hover {
+    border-color: var(--primary);
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+.cat-link.active {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--primary-light);
+    border-color: var(--primary);
+}
+
+/* ---- Sections ---- */
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* ---- Alerts ---- */
+
+.alert {
+    padding: 1.5rem;
+    border-radius: calc(var(--radius) * 2);
+    margin-bottom: 1rem;
+}
+
+.alert.error {
+    background: rgba(248, 113, 113, 0.15);
+    border: 1px solid #f87171;
+    color: #fca5a5;
+}
+
+.alert h2 {
+    color: inherit;
+    margin-top: 0;
+}
+
+.warning {
+    color: #fcd34d;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid #f59e0b;
+}
+
+/* ---- Misc ---- */
+
+.no-results {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 3rem;
+    background: var(--surface);
+    border-radius: calc(var(--radius) * 2);
+    border: 1px solid var(--border);
+}
+
+.inline {
+    display: inline;
+}
+
+.customer-detail {
+    background: var(--surface);
+    border-radius: calc(var(--radius) * 2);
+    padding: 2rem;
+    border: 1px solid var(--border);
+}
+
+.customer-info {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.customer-info p {
+    margin-bottom: 0.375rem;
+    color: var(--text-muted);
+}
+
+.customer-info strong {
+    color: var(--text);
+}
+
+/* ---- Footer (statehouse-style dark) ---- */
+
+.footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .quick-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .film-info-grid {
+        grid-template-columns: 1fr;
+    }
+    .film-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1.125rem;
+    }
+}
