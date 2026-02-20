@@ -6,6 +6,7 @@
 %% ============================================================
 
 :- use_module(domain).
+:- use_module(db).
 :- use_module(library(http/thread_httpd)).
 :- use_module(library(http/http_dispatch)).
 :- use_module(library(http/http_error)).
@@ -50,6 +51,7 @@ serve_css(Request) :-
 
 start :- start(8080).
 start(Port) :-
+    db:db_load,
     http_server(http_dispatch, [port(Port)]),
     format('~n=== DVD Rental running at http://localhost:~w/ ===~n~n', [Port]),
     thread_get_message(_).  % block forever so process stays up when run in background

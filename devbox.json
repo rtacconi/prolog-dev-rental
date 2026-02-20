@@ -1,10 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
-  "packages": ["swi-prolog@latest"],
+  "packages": [
+    "swi-prolog@latest",
+    "postgresql@latest"
+  ],
   "shell": {
     "init_hook": [],
     "scripts": {
-      "start": ["swipl server.pl"]
+      "start": ["swipl server.pl"],
+      "init-db": ["bash scripts/init-db.sh"]
     }
   }
 }
